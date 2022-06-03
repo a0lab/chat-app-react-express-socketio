@@ -1,4 +1,3 @@
-# Please check 'Master' branch to see committed code
 
 # Simple multi-user chat application
 
@@ -10,3 +9,6 @@ Requirements:
 - Send message to all users
 
 Explained the requirements clearly.
+
+## Demo - Chat window screenshot
+![Chat window screenshot](https://github.com/jnxssd/chat/blob/main/public/chat-screen-demo.png)
