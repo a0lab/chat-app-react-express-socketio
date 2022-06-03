@@ -1,7 +1,7 @@
 const channels = [
   {
     id: 1,
-    name: "general",
+    name: "all-users",
     users: [],
   },
   {

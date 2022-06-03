@@ -36,6 +36,7 @@ function Channels({
            </li>
          )}
        </ul>
+       
      </div>
    </aside>
  );

@@ -11,7 +11,7 @@ import {
  subscribeToMessages,
 } from "../../helpers/socket";
 import { v4 as uuidv4 } from "uuid";
-import "emoji-mart/css/emoji-mart.css";
+// import "emoji-mart/css/emoji-mart.css";
 import Channels from "./Channels";
 import ChatScreen from "./ChatScreen";
 
@@ -29,6 +29,7 @@ function Chat({ nickname }) {
    prevChannelRef.current = channel;
  });
  const prevChannel = prevChannelRef.current;
+ console.log(prevChannel, channel);
 
  useEffect(() => {
    if (prevChannel && channel) {
@@ -45,6 +46,7 @@ function Chat({ nickname }) {
 
    fetchChannelMessages(channel).then((res) => {
      setMessages(res);
+     console.log('messages received:' + JSON.stringify(res));
      setMessagesLoading(false);
    });
  }, [channel]);
@@ -52,6 +54,7 @@ function Chat({ nickname }) {
  useEffect(() => {
    fetchChannels().then((res) => {
      setChannels(res);
+     console.log('channels received: ' + JSON.stringify(res) )
      setChannelsLoading(false);
    });
 
@@ -62,6 +65,7 @@ function Chat({ nickname }) {
 
  const handleMessageChange = (event) => {
    setMessage(event.target.value);
+   console.log(message);
  };
 
  const handleMessageSend = (e) => {
@@ -77,6 +81,7 @@ function Chat({ nickname }) {
    };
    setMessages((messages) => [...messages, data]);
    sendMessage(data);
+   console.log('message sent:' + JSON.stringify(data));
    setMessage("");
  };
 

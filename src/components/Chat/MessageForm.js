@@ -1,5 +1,5 @@
 import { Smile } from "react-feather";
-import { Picker } from "emoji-mart";
+//import { Picker } from "emoji-mart";
 
 function MessageForm({
  emojiSelect,
@@ -10,16 +10,16 @@ function MessageForm({
  handleMessageChange,
 }) {
  let messageInput;
- const handleEmojiSelect = (emoji) => {
-   emojiSelect(emoji);
-   messageInput.focus();
- };
+//  const handleEmojiSelect = (emoji) => {
+//    emojiSelect(emoji);
+//    messageInput.focus();
+//  };
 
  return (
    <div>
-     {showEmojiPicker ? (
+     {/* {showEmojiPicker ? (
        <Picker title="" set="apple" onSelect={handleEmojiSelect} />
-     ) : null}
+     ) : null} */}
      <form onSubmit={handleMessageSend} className="message-form">
        <button
          type="button"

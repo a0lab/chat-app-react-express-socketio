@@ -1,35 +1,48 @@
-import ChatMessages from "./ChatMessages";
-import MessageForm from "./MessageForm";
 
-function ChatScreen({
- channel,
+function ChatMessages({
  messagesLoading,
- messages,
- showEmojiPicker,
- handleEmojiSelect,
- handleMessageSend,
- setShowEmojiPicker,
- message,
- handleMessageChange,
+ messages
 }) {
  return (
    <section className="chat-screen">
-     <header className="chat-header">
-       <h3>#{channel}</h3>
-     </header>
-     <ChatMessages messagesLoading={messagesLoading} messages={messages} />
+     {/* { JSON.stringify(messages)} */}
+     <div className="channels">
+       <ul className="chat-messages">
+         {messagesLoading ? (
+           <li>
+             <span className="channel-name">Loading channels....</span>
+           </li>
+         ) : messages.length ? (
+          messages.map((m) => {
+             return (
+               <li
+                 key={m.id}
+               >
+                 <span className="user-id"><i><b>{m.user} says:</b></i></span>
+                 <span className="message">{m.body}</span>
+               </li>
+             );
+           })
+         ) : (
+           <li>
+             <span className="channel-name">No channels available</span>
+           </li>
+         )}
+       </ul>
+     </div>
      <footer className="chat-footer">
-       <MessageForm
+       
+       {/* <MessageForm
          emojiSelect={handleEmojiSelect}
          handleMessageSend={handleMessageSend}
          setShowEmojiPicker={setShowEmojiPicker}
          showEmojiPicker={showEmojiPicker}
          message={message}
          handleMessageChange={handleMessageChange}
-       />
+       /> */}
      </footer>
    </section>
  );
 }
 
-export default ChatScreen;
+export default ChatMessages;
