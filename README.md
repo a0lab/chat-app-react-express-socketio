@@ -1,3 +1,5 @@
+# Please check 'Master' branch to see committed code
+
 # Simple multi-user chat application
 
 Requirements:
