@@ -6,3 +6,5 @@ Requirements:
 - Show list of users connected
 - Send message to single user
 - Send message to all users
+
+Explained the requirements clearly.
